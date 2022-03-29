@@ -1,4 +1,7 @@
 all:
+	rm -rf bin
 	mkdir -p bin
-	gcc -g -Wall -o bin/cvulkan src/*.c
+	gcc -Isrc/include -Lsrc/lib -g -Wall -o bin/cvulkan src/*.c \
+		-lvulkan-1
+		
 
