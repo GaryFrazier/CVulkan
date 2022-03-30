@@ -1,2 +1,2 @@
-# CVulkan
-CVulkan Experimentation
+# OpenGL
+OpenGL Experimentation
