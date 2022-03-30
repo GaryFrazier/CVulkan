@@ -15,6 +15,13 @@ int main() {
 	}	
 	glfwSetErrorCallback(glfwErrorCallback);
 	printf("glfw initialized\n");
+
+	GLFWwindow* window = glfwCreateWindow(640, 480, "OpenGLC Window", NULL, NULL);
+	if (!window) {
+		printf("glfw window initialization error\n");
+		getchar();
+		exit(0);
+	}
 	getchar();
 	glfwTerminate();
 }
