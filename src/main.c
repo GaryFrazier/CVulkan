@@ -1,25 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "vulkan.h"
+#include "glfw3.h"
 
 int main() {
-	VkInstanceCreateInfo createInfo = {
-		.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO,
-		.pNext = NULL,
-		.flags = 0,
-		.pApplicationInfo = NULL
-	};
+	if (!glfwInit()) {
+		printf("glfw initialization error\n");
+		getchar();
+		exit(0);
+	}	
 
-	VkInstance vulkanInstance;
-	
-	printf("Initializing Vulkan\n");
-	VkResult createInstanceResult = vkCreateInstance(&createInfo, NULL, &vulkanInstance);
-
-	if (createInstanceResult != VK_SUCCESS) {
-		printf("Vulkan initialization failed, code: %d\n", createInstanceResult);
-		exit(createInstanceResult);
-	}
-
-	printf("Vulkan initialized\n");
+	printf("glfw initialized\n");
+	getchar();
 }
 
