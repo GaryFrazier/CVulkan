@@ -3,6 +3,6 @@ all:
 	mkdir -p bin
 	cp src/lib/*.dll bin/
 	gcc -Isrc/include -Lsrc/lib -g -Wall -o bin/openglc src/*.c \
-		-lglfw3dll
+		-lglfw3dll -lopengl32
 		
 

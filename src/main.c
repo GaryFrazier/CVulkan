@@ -7,8 +7,8 @@ int main() {
 	// Initialization
 	initializeEngine();
 	
-	GLFWwindow* window = createWindow(640, 480, "test window");		
-	while (!glfwWindowShouldClose(window))
+	Viewport viewport = createWindow(640, 480, "test window");		
+	while (!glfwWindowShouldClose(viewport.window))
 	{
 		glfwPollEvents();
 	}
