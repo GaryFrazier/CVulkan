@@ -6,6 +6,10 @@ void glfwErrorCallback(int error, const char* description) {
 	fprintf(stderr, "Error code %d: %s\n", error, description);
 }
 
+void glfwCloseCallback(GLFWwindow* window) {
+	glfwDestroyWindow(window);
+}
+
 void initializeEngine() {
 	if (!glfwInit()) {
 		printf("glfw initialization error\n");
@@ -23,5 +27,8 @@ GLFWwindow* createWindow(int width, int height, char* name) {
 		getchar();
 		exit(0);
 	}
+	glfwMakeContextCurrent(window);
+	glfwSetWindowCloseCallback(window, glfwCloseCallback);
 	return window;
 }
+
